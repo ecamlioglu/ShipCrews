@@ -1,0 +1,35 @@
+.card {
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.language-selector {
+  padding-left: 30%;
+  width: 200px;
+}
+
+.language-dropdown {
+  width: 100%;}
+
+.language-dropdown .mat-select-panel {
+  width: 200px !important;
+}
+
+:host ::ng-deep mat-form-field .mat-form-field-infix {
+  width: unset;
+}
+:host ::ng-deep mat-form-field .mat-select-value {
+  padding-right: 0.5rem; 
+}

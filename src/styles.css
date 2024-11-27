@@ -1,1 +1,33 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.crew-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #e3f2fd; /* Light blue background */
+}
+
+mat-card-content p {
+  margin: 10px 0;
+}
+
+mat-tab-group {
+  margin-top: 20px;
+}
