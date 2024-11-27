@@ -1,0 +1,26 @@
+.crew-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #e3f2fd; /* Light blue background */
+  }
+  
+  mat-card-content p {
+    margin: 10px 0;
+  }
+  
+  mat-tab-group {
+    margin-top: 20px;
+  }.info-label-value {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.info-label-value .label {
+    font-weight: bold;
+    color: #333;
+}
+
+.info-label-value .value {
+    color: #555;
+}

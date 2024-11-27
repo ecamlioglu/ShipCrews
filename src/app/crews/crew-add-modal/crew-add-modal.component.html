@@ -1,0 +1,77 @@
+<h2 mat-dialog-title>{{ 'ADD_NEW_CREW' | translate }}</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'FIRST_NAME' | translate }}</mat-label>
+    <input matInput [(ngModel)]="crew.firstName" name="firstName" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'LAST_NAME' | translate }}</mat-label>
+    <input matInput [(ngModel)]="crew.lastName" name="lastName" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'NATIONALITY' | translate }}</mat-label>
+    <mat-select [(ngModel)]="crew.nationality" name="nationality" required>
+      <mat-option *ngFor="let nationality of nationalities" [value]="nationality">
+        {{ nationality }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'TITLE' | translate }}</mat-label>
+    <mat-select [(ngModel)]="crew.title" name="title" required>
+      <mat-option *ngFor="let title of titles" [value]="title">
+        {{ title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'DAYS_ON_BOARD' | translate }}</mat-label>
+    <input matInput type="number" [(ngModel)]="crew.daysOnBoard" name="daysOnBoard" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'DAILY_RATE' | translate }}</mat-label>
+    <input matInput type="number" [(ngModel)]="crew.dailyRate" name="dailyRate" required>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'CURRENCY' | translate }}</mat-label>
+    <mat-select [(ngModel)]="crew.currency" name="currency" required>
+      <mat-option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngIf="crew && crew.certificates && crew.certificates.length > 0">
+  <h3>{{ 'CERTIFICATES' | translate }}</h3>
+  <ng-container *ngFor="let certificate of crew.certificates; let i = index">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'CERTIFICATE_TYPE' | translate }}</mat-label>
+        <mat-select [(ngModel)]="certificate.type.id" name="certificateType" required>
+          <mat-option *ngFor="let certificateType of certificateTypes" [value]="certificateType.id">
+            {{ certificateType.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'ISSUE_DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="certificate.issueDate" name="issueDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>{{ 'EXPIRY_DATE' | translate }}</mat-label>
+        <input matInput [matDatepicker]="picker2" [(ngModel)]="certificate.expiryDate" name="expiryDate{{i}}" required>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+      <button mat-icon-button (click)="removeCertificate(i)" aria-label="Remove Certificate">
+        <mat-icon>delete</mat-icon>
+      </button>    </div>
+  </ng-container>
+  </ng-container>
+  <button mat-button (click)="addCertificate()">{{ 'ADD_CERTIFICATE' | translate }}</button>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">{{ 'CANCEL' | translate }}</button>
+  <button mat-button (click)="saveCrew()">{{ 'SAVE' | translate }}</button>
+</mat-dialog-actions>

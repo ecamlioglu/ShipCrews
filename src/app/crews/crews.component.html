@@ -1,0 +1,98 @@
+<mat-card class="crew-card">
+    <mat-card-header style="justify-content: space-between; padding: 1%;">
+      <mat-card-title>{{ 'CREW_LIST' | translate }}</mat-card-title>
+      <button mat-raised-button color="primary" (click)="openAddCrewModal()">{{ 'ADD_CREW' | translate }}</button>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-table [dataSource]="crews" class="mat-elevation-z8">
+        <!-- First Name Column -->
+        <ng-container matColumnDef="firstName">
+          <mat-header-cell *matHeaderCellDef> {{ 'FIRST_NAME' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.firstName }} </mat-cell>
+        </ng-container>
+  
+        <!-- Last Name Column -->
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef> {{ 'LAST_NAME' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.lastName }} </mat-cell>
+        </ng-container>
+  
+        <!-- Nationality Column -->
+        <ng-container matColumnDef="nationality">
+          <mat-header-cell *matHeaderCellDef> {{ 'NATIONALITY' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.nationality }} </mat-cell>
+        </ng-container>
+  
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef> {{ 'TITLE' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.title }} </mat-cell>
+        </ng-container>
+  
+        <!-- Days On Board Column -->
+        <ng-container matColumnDef="daysOnBoard">
+          <mat-header-cell *matHeaderCellDef> {{ 'DAYS_ON_BOARD' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.daysOnBoard }} </mat-cell>
+        </ng-container>
+  
+        <!-- Daily Rate Column -->
+        <ng-container matColumnDef="dailyRate">
+          <mat-header-cell *matHeaderCellDef> {{ 'DAILY_RATE' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.dailyRate }} </mat-cell>
+        </ng-container>
+  
+        <!-- Currency Column -->
+        <ng-container matColumnDef="currency">
+          <mat-header-cell *matHeaderCellDef> {{ 'CURRENCY' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.currency }} </mat-cell>
+        </ng-container>
+  
+        <!-- Total Income Column -->
+        <ng-container matColumnDef="totalIncome">
+          <mat-header-cell *matHeaderCellDef> {{ 'TOTAL_INCOME' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew"> {{ crew.totalIncome }} </mat-cell>
+        </ng-container>
+  
+        <!-- Certificates Column -->
+        <ng-container matColumnDef="certificates">
+          <mat-header-cell *matHeaderCellDef> {{ 'CERTIFICATES' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew">
+            <button mat-button color="primary" (click)="openCertificatesModal(crew)">{{ 'VIEW_CERTIFICATES' | translate }}</button>
+          </mat-cell>
+        </ng-container>
+  
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef> {{ 'ACTIONS' | translate }} </mat-header-cell>
+          <mat-cell *matCellDef="let crew">
+            <button mat-icon-button color="primary" (click)="viewCrew(crew)">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="editCrew(crew)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button color="warn" (click)="deleteCrew(crew)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</mat-card-content>
+<mat-card-footer  class="crews-footer">
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <span>{{ 'TOTAL_INCOME_BY_CURRENCY' | translate }}:</span>
+    <mat-list>
+      <mat-list-item>
+        @for (total of totalIncomesByCurrency; track total) {
+          <span>{{ total.currency }}: {{ total.amount }}</span> <br/>
+        }
+      </mat-list-item>
+    </mat-list>
+  </div>
+</mat-card-footer>
+</mat-card>
+
+<app-certificate-view #certificateView></app-certificate-view>

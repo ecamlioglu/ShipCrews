@@ -1,0 +1,47 @@
+.crew-card {
+  margin: 20px;
+  padding: 20px;
+  background-color: #e3f2fd; /* Light blue background */
+}
+
+mat-header-cell,
+mat-cell {
+  padding: 8px;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  color: #1e88e5; /* Azure color */
+}
+
+mat-card-footer {
+  background-color: #bbdefb; /* Lighter blue for footer */
+  padding: 10px;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+.footer-right-align {
+  text-align: right;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-right-align ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-right-align li {
+  margin: 4px 0;
+}
+
+.crews-footer {
+  text-align: right;
+  background-color: transparent !important;
+  padding: 0 32px;
+  padding-top: 8px;
+}
