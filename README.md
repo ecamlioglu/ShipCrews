@@ -2,58 +2,102 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
 
-## Development server
+## Project Description
 
-To start a local development server, run:
+ShipCrews is an application designed to manage ship crew members, their certificates, and calculate their total incomes by currency. The application allows users to add, edit, view, and delete crew members, manage their certificates, and switch between different languages.
 
-```bash
-ng serve
-```
+## Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Add, edit, view, and delete crew members
+- Manage certificates for crew members
+- Calculate total incomes by currency
+- Switch between different languages using the `TranslateService`
 
-## Code scaffolding
+## Usage Instructions
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+To use the application, follow these steps:
 
-```bash
-ng generate component component-name
-```
+1. Start the development server by running `ng serve`.
+2. Open your browser and navigate to `http://localhost:4200/`.
+3. Use the application to manage crew members, their certificates, and calculate total incomes by currency.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Switching Languages
 
-```bash
-ng generate --help
-```
+To switch languages using the `TranslateService`, follow these steps:
 
-## Building
+1. Open the application.
+2. Use the language switcher to select the desired language.
+3. The application will automatically update to display the selected language.
 
-To build the project run:
+## Managing Crew Members
 
-```bash
-ng build
-```
+### Adding a Crew Member
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+1. Open the application.
+2. Click on the "Add Crew Member" button.
+3. Fill in the required information and click "Save".
 
-## Running unit tests
+### Editing a Crew Member
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+1. Open the application.
+2. Click on the "Edit" button next to the crew member you want to edit.
+3. Update the information and click "Save".
 
-```bash
-ng test
-```
+### Viewing a Crew Member
 
-## Running end-to-end tests
+1. Open the application.
+2. Click on the "View" button next to the crew member you want to view.
+3. The crew member's details will be displayed.
 
-For end-to-end (e2e) testing, run:
+### Deleting a Crew Member
 
-```bash
-ng e2e
-```
+1. Open the application.
+2. Click on the "Delete" button next to the crew member you want to delete.
+3. Confirm the deletion.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Managing Certificates
 
-## Additional Resources
+### Adding a Certificate
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Open the application.
+2. Click on the "Add Certificate" button.
+3. Fill in the required information and click "Save".
+
+### Editing a Certificate
+
+1. Open the application.
+2. Click on the "Edit" button next to the certificate you want to edit.
+3. Update the information and click "Save".
+
+### Viewing a Certificate
+
+1. Open the application.
+2. Click on the "View" button next to the certificate you want to view.
+3. The certificate's details will be displayed.
+
+### Deleting a Certificate
+
+1. Open the application.
+2. Click on the "Delete" button next to the certificate you want to delete.
+3. Confirm the deletion.
+
+## Calculating Total Incomes by Currency
+
+The application automatically calculates the total incomes by currency for all crew members. The total incomes are displayed in the application.
+
+## Contact
+
+For any inquiries or support, please contact me at [secamlioglu@gmail.com](mailto:secamlioglu@gmail.com).
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Contributing
+
+If you would like to contribute to this project, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push the branch to your fork.
+4. Submit a pull request with a detailed description of your changes.
